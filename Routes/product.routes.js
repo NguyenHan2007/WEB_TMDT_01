@@ -53,16 +53,5 @@ router.get("/search", (req, res) => {
   }
   //console.log("this is" +  pageNumber);
 });
-// router.get('/search/namecategory=:namecategory/:page',(req,res)=>{
-//     let query = req.params.namecategory;
-//     let pageNumber = req.params.page;
-//     console.log('query search= '+ query);
-//     if(!pageNumber){
-//         pageNumber = "1"
-//     }
-
-//         controllerProduct.loadSearchByNameCategory(req, res,query,pageNumber);
-//     //console.log("this is" +  pageNumber);
-// });
 
 module.exports = router;

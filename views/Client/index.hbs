@@ -26,30 +26,19 @@
     <section class="section-margin mt-0">
       <div class="owl-carousel owl-theme hero-carousel">
         <div class="hero-carousel__slide">
+          {{#each Category}}
           <img src="img/home/hero-slide1.png" alt="" class="img-fluid">
           <a href="#" class="hero-carousel__slideOverlay">
-            <h3>Wireless Headphone</h3>
+            <h3><a href="/product/search?namecategory={{this.name}}&page=1">{{this.name}}</a></h3>
             <p>Accessories Item</p>
           </a>
-        </div>
-        <div class="hero-carousel__slide">
-          <img src="img/home/hero-slide2.png" alt="" class="img-fluid">
-          <a href="#" class="hero-carousel__slideOverlay">
-            <h3>Wireless Headphone</h3>
-            <p>Accessories Item</p>
-          </a>
-        </div>
-        <div class="hero-carousel__slide">
-          <img src="img/home/hero-slide3.png" alt="" class="img-fluid">
-          <a href="#" class="hero-carousel__slideOverlay">
-            <h3>Wireless Headphone</h3>
-            <p>Accessories Item</p>
-          </a>
+          {{/each}}
         </div>
       </div>
     </section>
     <!--================ Hero Carousel end =================-->
 
+<!--*************************************************************************************************************************-->
     <!-- ================ trending product section start ================= -->  
     <section class="section-margin calc-60px">
       <div class="container">
@@ -78,7 +67,7 @@
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
               <div class="card-product__img">
-                <img class="card-img" src="img/product/product2.png" alt="">
+                <img class="card-img" src="img/home/hero-banner.png" alt="">
                 <ul class="card-product__imgOverlay">
                   <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>

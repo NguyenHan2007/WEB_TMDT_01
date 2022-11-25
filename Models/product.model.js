@@ -7,19 +7,12 @@ const productSchema = new Schema({
         id: String,
         name: String
     },
-    descriptionshort: String,
-    descriptionfull: String,
-    author: {
-        id: String,
-        name: String
-    },
     price: Number,
     pathImg: String,
     sold: {
         type: Number,
         default: 0,
     },
-    video: Array,
     comment: [{
         iduser: String,
         name: String,

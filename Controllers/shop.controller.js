@@ -14,9 +14,10 @@ module.exports = {
                     .sort({ createdAt: -1 })
                     .lean()
                     .then((productList) => {
+                        
                         Product.countDocuments().then((count) => {
                             Product.find({ check: 1 }).sort({ rating: -1 }).lean().then((toprating) => {
-                                res.render("./Client/index", {
+                                    res.render("./Client/index", {
                                     Category: categoryList,
                                     Product: productList,
                                     Count: count,
@@ -25,6 +26,7 @@ module.exports = {
                                     Page: "Home"
                                 });
                             })
+
 
                         });
                     });

@@ -8,40 +8,7 @@ const Category = require("../Models/category.model");
 module.exports = {
     // danh sach product
     loadall: async(req, res, pageNum, sort) => {
-        //add and update field MongoDB Product
-        // Product.updateMany({}, {
-        //         $set: {
-        //             "author.id": "5f3797befac3bc1b0c0ddafd",
-        //             "author.name": "Gin",
-        //             pathImg: "/img/product/ImgShow/product1.png",
-        //             sold: 20,
-        //             "author.id": "id08",
-        //             rating: 8.2,
-        //             comment: [{
-        //                     iduser: "5f36aab31293a30017bbaf05",
-        //                     name: "GinAce",
-        //                     com: "Ok! so good! "
-        //                 },
-        //                 {
-        //                     iduser: "5f36c47a236f8c31b887fa63",
-        //                     name: "Nguyễn Thị Ngọc Hân",
-        //                     com: "great! "
-        //                 },
-        //                 {
-        //                     iduser: "5f37852ccfa3b70017c9acd0",
-        //                     name: "minh anh",
-        //                     com: "thanks!"
-        //                 }
-        //             ],
-        //         }
-        //     }, { new: true },
-        //     (err, doc) => {
-        //         if (err) {
-        //             console.log("Something wrong when updating data!");
-        //         }
-
-        //         console.log("Update successful!");
-        //     });
+        
         let key = 1;
         //Kiem tra sap xep thu tu tang dan hay giam dan
         if (sort == "PriceDescending" || sort == "LengthDescending") key = -1;

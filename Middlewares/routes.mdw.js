@@ -17,7 +17,7 @@ module.exports = (app) => {
    // app.use('/admin', restrict, settingRole, isAdmin, admin);
     app.use('/', settingRole, shop);
    // app.use('/product', settingRole, product);
-   // app.use('/category', settingRole, category);
+    app.use('/category', settingRole, category);
     //app.use('/cart', restrict, settingRole, isUser, cart);
     //app.use('/mycourse', restrict, settingRole, isUser, mycourse);
     //app.use('/myclass', restrict, settingRole, isTeacher, myclass);
