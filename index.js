@@ -26,7 +26,7 @@ const URI = "mongodb://Admin:!123456@ac-xjse6bw-shard-00-00.hytckvs.mongodb.net:
 
 
 //set public static folder
-app.use(express.static(__dirname + '/Public'));
+app.use(express.static(__dirname + '/public'));
 //use view engine
 let expressHbs = require('express-handlebars');
 let hbs = expressHbs.create({
