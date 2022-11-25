@@ -1,0 +1,105 @@
+<!-- Main content -->
+<div class="main-content">
+  <!-- Header -->
+  <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+    <div class="container">
+      <div class="header-body text-center mb-3">
+        <div class="row justify-content-center">
+          <h1 class="text-white">Create an account</h1>
+        </div>
+      </div>
+    </div>
+    <div class="separator separator-bottom separator-skew zindex-100">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container mt--8 pb-5">
+    <!-- Table -->
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="card bg-secondary border-0">
+          <div class="card-header bg-transparent pb-5">
+            <div class="text-muted text-center mt-2 mb-4"><small>Sign up with</small></div>
+            <div class="text-center">
+              <a href="#" class="btn btn-neutral btn-icon mr-4">
+                <span class="btn-inner--icon"><img src="../img/icons/common/github.svg"></span>
+                <span class="btn-inner--text">Github</span>
+              </a>
+              <a href="#" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon"><img src="../img/icons/common/google.svg"></span>
+                <span class="btn-inner--text">Google</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body px-lg-5 py-lg-5">
+            {{#if message.length}}
+            <div class="text-red">
+              {{message}}
+            </div>
+            <br>
+            {{/if}}
+            <form action="/login/register" method="POST">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="username" id="username" name="username" class="form-control"
+                  placeholder="Enter Username" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control"
+                  placeholder="Create Password" />
+              </div>
+              <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input type="password" id="password2" name="password2" class="form-control"
+                  placeholder="Confirm Password" />
+              </div>
+              <div class="form-group">
+                <label for="displayname">Name</label>
+                <input type="displayname" id="displayname" name="displayname" class="form-control"
+                  placeholder="Enter Name" />
+              </div>
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="address" id="address" name="address" class="form-control" placeholder="address" />
+              </div>
+              <div class="form-group">
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday" name="birthday" class="form-control"
+                  placeholder="Birthday: yy-mm-dd" />
+              </div>
+              <div class="form-group">
+                <label for="avatar">URL Avatar</label>
+                <input type="avatar" id="avatar" name="avatar" class="form-control" placeholder="URL Avatar" />
+              </div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col-12">
+            <div class="custom-control custom-control-alternative custom-checkbox">
+              <input class="custom-control-input" id="customCheckRegister" name="customCheckRegister" type="checkbox"
+                value="customCheckRegister">
+              <label class="custom-control-label" for="customCheckRegister">
+                <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary mt-4" id="CreateAccount">Create account</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

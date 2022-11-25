@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="css/pogo-slider.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="contact_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+    <!-- LOADER -->
+    <div id="preloader">
+        <div class="loader">
+            <img src="images/loader.gif" alt="#" />
+        </div>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+    <!-- section -->
+    <div id="contact" class="contact-box">
+        <div class="container">
+            <!-- Header -->
+            <div class="header pb-6 d-flex align-items-center">
+                <span class="mask bg-gradient-default opacity-8"></span>
+
+                <!-- Header container -->
+                <div class="container-fluid d-flex align-items-center">
+                    <div class="row">
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <div class="row pb-6 d-flex align-items-center">
+                <div class="col-lg-3 col-sm-5 col-xs-12" style="background: #dfdddd;">
+                    <br>
+                    {{#each User}}
+                    {{#if email}}
+                    {{#if avatar}}
+                    <div class="text-center" style="background-color: aliceblue;">
+                        <img src="{{avatar}}" alt="">
+                    </div>
+                    {{else}}
+                    <div class="text-center">
+                        <img src="https://lala.com.vn/public/images/default-user.jpg" alt="">
+                    </div>
+                    {{/if}}
+                    {{/if}}
+                    {{#if address}}
+                    <br>
+                    <div class="text-center"
+                        style="width: 100%;background-color:aliceblue;padding-top: 10px;padding-bottom: 10px;">
+                        <h4>{{displayname}}</h4>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="left-contact">
+                        <div class="media cont-line" style="width: 100%;background-color:aliceblue">
+                            <div class="media-left icon-b">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-body dit-right">
+                                <h4>Email</h4>
+                                <p>
+                                    {{email}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media cont-line" style="width: 100%;background-color:aliceblue">
+                            <div class="media-left icon-b">
+                                <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-body dit-right">
+                                <h4>Address</h4>
+                                <p>{{address}}</p>
+                            </div>
+                        </div>
+                        <div class="media cont-line" style="width: 100%;background-color:aliceblue">
+                            <div class="media-left icon-b">
+                                <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-body dit-right">
+                                <h4>Birthday</h4>
+                                <p>{{birthday}}</p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+                <div class="col-lg-9 col-sm-7 col-xs-12">
+                    <div class="container text-red">
+                        {{#if message.length}}
+                        <div class="text-red">
+                            {{message}}
+                        </div>
+                        <br>
+                        {{/if}}
+                    </div>
+                    {{#each User}}
+                    {{#if address}}
+                    <div class="card-body">
+                        <form action="/login/changeaddress" method="post">
+                            <h6 class="heading-small text-muted mb-4">User information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="displayname">Name</label>
+                                            <input type="displayname" id="displayname" name="displayname"
+                                                class="form-control" placeholder="{{displayname}}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email" name="email" class="form-control"
+                                                placeholder={{email}} readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="birthday">Birthday</label>
+                                            <input type="date" id="birthday" name="birthday" class="form-control"
+                                                placeholder="Enter your birthday" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="address">Address</label>
+                                            <input type="address" id="address" name="address" class="form-control"
+                                                placeholder="{{address}}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="avatar">Avatar</label>
+                                            <img src="{{avatar}}" alt="">
+                                            <input type="avatar" id="avatar" name="avatar" class="form-control"
+                                                placeholder="{{avatar}}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary my-4">Confirm</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <form action="/login/changepassword" method="post">
+                            <h6 class="heading-small text-muted mb-4">Change password</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" id="password" name="password" class="form-control"
+                                                placeholder="Enter your Password" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="password2">New Password</label>
+                                            <input type="password" id="password2" name="password2" class="form-control"
+                                                placeholder="New Password" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="password3">Confirm Password</label>
+                                            <input type="password" id="password3" name="password3" class="form-control"
+                                                placeholder="Confirm Password" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary my-4">Confirm</button>
+                            </div>
+                        </form>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+    <!-- end section -->
+</body>
+
+</html>
